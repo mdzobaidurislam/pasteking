@@ -16,7 +16,6 @@ export default function Home() {
   const [newUrl, setNewUrl] = useState("")
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(title, content);
 
     try {
       const response = await axios.post("/api/paster", { title, content });
@@ -37,10 +36,14 @@ export default function Home() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    console.log(token)
     const verifyToken = async (token: string | null) => {
       if (!token) {
         console.log("No token found, redirecting to /auth");
         // router.push('/auth');
+        if (newUrl) {
+          router.push(`/${newUrl}`);
+        }
         return;
       }
 
@@ -48,6 +51,9 @@ export default function Home() {
         const response = await axios.post('/api/protected', { token });
         if (response.data.valid) {
           setEmail(response.data.user.email);
+        } else {
+          localStorage.removeItem("token");
+          console.log("faild")
         }
       } catch (error) {
         console.error("Verification failed:", error);
@@ -56,6 +62,7 @@ export default function Home() {
 
     verifyToken(token);
   }, [router, newUrl]);
+
 
   return (
     <div>

@@ -1,0 +1,176 @@
+.page_ad_wrapper {
+    position: relative;
+    height: fit-content!important;
+    min-height: 50vh;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(82,82,111,.44);
+    background: #17171799;
+    
+    margin-top: 50px;
+}
+
+.premium-ad_countdown_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.premium_ad_method_toggle_wrapper {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgba(82,82,111,.44);
+    height: 50px;
+    background: transparent;
+}
+.page_ad_wrapper_inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    filter: blur(27px);
+    display: flex;
+    background-color: #ffffffab;
+    z-index: -1;
+}
+/* add free  */
+.premium_ad_free_access {
+    padding: 1.5rem;
+    text-align: center;
+}
+.premium_ad_countdown_wrapper h2 {
+    user-select: none;
+    color: #eb5757;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.premium_ad_ct_text {
+    color: #e4e4ed;
+    max-width: 400px;
+    font-size: 16px;
+    user-select: none;
+    line-height: 1.4;
+    margin-top: 2px;
+    font-weight: 450;
+    margin: 0 auto 10px!important;
+}
+.premium_ad_countdown {
+    justify-content: center;
+    width: max-content;
+    gap: .5rem;
+    display: flex;
+    margin: 0 auto;
+    user-select: none;
+}
+.premium_ad_timeSection {
+    text-align: center;
+    border: 1px solid rgba(82,82,111,.44);
+    align-items: center;
+    background: #20212e!important;
+    backdrop-filter: blur(20px) saturate(190%) contrast(70%) brightness(80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10000;
+    line-height: 1.35;
+    width: 75px;
+    padding: .25rem .625rem;
+    padding: var(--et-unit-padding,.25rem .625rem);
+    row-gap: 2px;
+    border-radius: 2px;
+}
+
+.premium_ad_countdown_time {
+    color: #fff;
+    font-weight: var(--font-weight-semibold);
+    font-size: 38px;
+    letter-spacing: -.37px;
+}
+.premium_ad_countdown_label {
+    color: rgba(220,216,254,.576);
+    font-size: .75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.premium_ad_ct_footer {
+    background: rgba(82,82,111,.44);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 4px 20px;
+    border-radius: 24px;
+    display: block;
+    letter-spacing: 2px;
+    max-width: 467px;
+    font-size: 14px;
+    user-select: none;
+    margin: 45.5px auto 12px;
+}
+.premium_ad_ct_footer:hover {
+    color: #5c68ce;
+    transition-property: color;
+    cursor: pointer !important;
+    text-decoration: underline;
+}
+.premium_ad_ct_footer b {
+    color: #fff;
+}
+.premium_ad_firstcta {
+    color: var(--color-brand-text);
+    background: var(--color-brand-bg);
+    --button-height: 32px;
+    --button-icon-size: 14px;
+    --button-font-size: 14px;
+    --button-corner-radius: var(--rounded-full);
+    --button-padding: 0 12px;
+    --button-gap: 4px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: var(--button-height);
+    height: var(--button-height);
+    gap: var(--button-gap);
+    padding: var(--button-padding);
+    border-radius: 4px;
+    transition: .16s ease-in-out;
+    transition-property: border,background-color,color,box-shadow,opacity,filter,transform;
+    appearance: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 240px;
+    margin: 10px auto 0;
+    height: 30px;
+    --transition: 0.25s;
+    --spark: 1.8s;
+    --cut: 0.1em;
+    --active: 0;
+    --bg: linear-gradient(92.88deg,#455eb5 9.16%,#5643cc 43.89%,#673fd7 64.72%);
+    color: #fff;
+    border: none;
+    overflow: hidden;
+    cursor: pointer!important;
+}
+.premium_ad_firstcta:hover {
+    filter: brightness(115%);
+    text-decoration: none!important;
+}
+.premium_ad_cta_text {
+    z-index: 20!important;
+    color: #fff;
+}
+.premium_ad_backdrop {
+    position: absolute;
+    inset: var(--cut);
+    background: var(--bg);
+    border-radius: 4px;
+    transition: background var(--transition);
+}
