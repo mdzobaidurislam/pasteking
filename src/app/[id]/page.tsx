@@ -3,11 +3,16 @@
 import { MongoClient, ObjectId } from "mongodb"; // Import ObjectId
 import Header from "@/components/HeaderCom";
 import PremiumAccessScreen from "@/components/PremiumAdCountdown/PremiumAdCountdown";
+import { Metadata, ResolvingMetadata } from "next";
 
 interface Paster {
     title: string;
     content: string;
     createdAt: string;
+}
+type Props = {
+    params: Promise<{ id: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 // Connect to MongoDB
@@ -35,6 +40,16 @@ const fetchPasterById = async (id: string): Promise<Paster | null> => {
 
     return null; // Return null if the document is not found or lacks required fields
 };
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const id = (await params).id
+    const paster = await fetchPasterById(id);
+    return {
+        title: paster?.title,
+    }
+}
 
 const PasterDetail = async ({ params }: { params: { id: string } }) => {
     const { id } = params; // Get the ID from the URL
@@ -52,7 +67,7 @@ const PasterDetail = async ({ params }: { params: { id: string } }) => {
             <div className="flex">
                 {/* {email && <SideBarCom />} */}
                 <main className="container  max-w-7xl mx-auto px-16 ">
-                    <PremiumAccessScreen />
+                    <PremiumAccessScreen paster={paster} />
                 </main >
 
             </div >

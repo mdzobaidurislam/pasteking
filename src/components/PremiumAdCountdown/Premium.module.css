@@ -21,9 +21,10 @@
 .premium_ad_method_toggle_wrapper {
     width: 100%;
     display: flex;
-    border-bottom: 1px solid rgba(82,82,111,.44);
-    height: 50px;
+    border-bottom: 1px solid rgb(132 132 169 / 91%);
+    height: 64px;
     background: transparent;
+    border-radius: inherit;
 }
 .page_ad_wrapper_inner{
     position: absolute;
@@ -37,6 +38,13 @@
     background-color: #ffffffab;
     z-index: -1;
 }
+.premium_ad_toggle_divider {
+    width: 1px;
+    border-left: 1px solid rgb(132 132 169 / 91%);
+    height: 84px;
+    transform: translateY(-10px);
+}
+
 /* add free  */
 .premium_ad_free_access {
     padding: 1.5rem;
@@ -173,4 +181,63 @@
     background: var(--bg);
     border-radius: 4px;
     transition: background var(--transition);
+}
+.premium_ad_premium_access_title {
+    color: var(--color-text-secondary);
+    text-align: center;
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: -.37px;
+    font-weight: var(--font-weight-medium);
+    user-select: none;
+    margin-top: 145px!important;
+}
+.premium_ad_toggle_title {
+    font-style: normal;
+    text-align: left;
+    color: #eeeffc;
+    line-height: 2rem;
+    font-size: var(--font-size-title);
+    font-weight: 500;
+    letter-spacing: -.01rem;
+    position: relative;
+    width: fit-content;
+    user-select: none;
+}
+.premium_ad_toggle_description {
+    font-style: normal;
+    text-align: left;
+    color: #999aa1;
+    line-height: 1.3;
+    font-size: var(--font-size-smallPlus);
+    font-weight: 500;
+    user-select: none;
+}
+.premium_ad_method_toggle_wrapper>button {
+    width: 50%;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.premium_ad_method_toggle_wrapper>button[data-state="inactive"] div {
+    opacity: .2;
+    font-style: italic!important;
+}
+.premium_ad_free_access_btn[data-state="active"] .premium_ad_toggle_title:after, .premium_ad_premium_access_btn[data-state="active"] .premium_ad_toggle_title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: #eeeffc;
+    border-radius: 9999px;
+    opacity: 1;
+    top: 47px;
+    transition: opacity .18s cubic-bezier(.25,.46,.45,.94);
+}
+.premium_ad_free_access_btn[data-state="active"] .premium_ad_toggle_title:after {
+    top: 56px;
 }

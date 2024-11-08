@@ -1,6 +1,14 @@
-import React from 'react';
-import styles from './Premium.module.css'
-export default function AddFree() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import React, { useState, useEffect } from 'react';
+import styles from './Premium.module.css';
+import { useRouter } from 'next/navigation';
+import { formatTime } from '@/lib/utils';
+
+interface AddFreeProps {
+    timeLeft: number;
+}
+
+const AddFree: React.FC<AddFreeProps> = ({ timeLeft }) => {
     return (
         <div className={styles.premium_ad_free_access}>
             <h2>Paste Content hidden</h2>
@@ -10,11 +18,15 @@ export default function AddFree() {
             </p>
             <div className={styles.premium_ad_countdown}>
                 <div className={styles.premium_ad_timeSection}>
-                    <span className={styles.premium_ad_countdown_time}>14</span>
+                    <span className={styles.premium_ad_countdown_time}>
+                        {formatTime(timeLeft).split(':')[0]}
+                    </span>
                     <span className={styles.premium_ad_countdown_label}>Minutes</span>
                 </div>
                 <div className={styles.premium_ad_timeSection}>
-                    <span className={styles.premium_ad_countdown_time}>16</span>
+                    <span className={styles.premium_ad_countdown_time}>
+                        {formatTime(timeLeft).split(':')[1]}
+                    </span>
                     <span className={styles.premium_ad_countdown_label}>Seconds</span>
                 </div>
             </div>
@@ -50,3 +62,4 @@ export default function AddFree() {
         </div>
     );
 }
+export default AddFree
