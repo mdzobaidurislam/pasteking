@@ -45,7 +45,7 @@ const Auth = () => {
         </Link>
         <h1 className='text-3xl'>Your PasteKing Account</h1>
         <div className='mt-6'>
-          <button onClick={handleSubmit} className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45 transition-all p-4 mt-4 rounded-md border w-80`}>
+          <button onClick={handleSubmit} className={`flex items-center justify-center border-blue-100 bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45 transition-all p-4 mt-4 rounded-md border w-80`}>
             Continue with Email
           </button>
           <input
@@ -53,9 +53,9 @@ const Auth = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Your email address'
-            className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45  ` + (!flag ? `h-0` : ` transition-all duration-500 p-4 mt-4 rounded-md border w-80`)}
+            className={`flex items-center justify-center border-blue-100 bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45  ` + (!flag ? `h-0` : ` transition-all duration-500 p-4 mt-4 rounded-md border w-80`)}
           />
-          <hr className={!flag ? `mr-4 border-0` : `mt-8 mr-4 transition-all duration-500`} />
+          <hr className={!flag ? `mr-4 border-0` : `mt-4 mr-4 border-blue-100 transition-all duration-500`} />
           <MailSignIn value={"Continue with Google"} img_icon={"/googleicon.svg"} />
           <MailSignIn value={"Continue with Apple"} img_icon={"/appleicon.svg"} />
         </div>
