@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
   email: {
     type: String,
     required: [true, "Please provide an email"],
@@ -22,13 +25,18 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  isAdmin: {
+    // Changed from String to Boolean
+    type: Boolean, // This is the key fix
+    default: false,
+  },
   waiting_time: {
     type: Number,
     default: 2,
   },
   createdAt: {
     type: Date,
-    default: Date.now, // Automatically set the current date and time when a user is created
+    default: Date.now,
   },
   verifyToken: {
     type: String,
