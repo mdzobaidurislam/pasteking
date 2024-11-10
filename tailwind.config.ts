@@ -9,7 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		backgroundImage: {
+			'primary-gradient': 'linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff)',
+		  },
   		colors: {
+			
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

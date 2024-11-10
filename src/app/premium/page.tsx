@@ -6,16 +6,16 @@ import PaymentForm from './paymentForm'
 const Premium = () => {
   return (
     <div>
-      <header className="border-b border-gray-100 flex justify-between px-8 h-[60px] font-sans">
+    
         <Header />
-      </header>
+
       <div>
         <div className='mt-8 flex flex-col w-fit items-center mx-auto'>
           <Image width={48} height={48} alt='Logo' src="/Logo.png" className=' mb-[20px]' />
           <p className='text-[15px] tracking-[0.5em] mb-[15px] bg-gradient-to-r from-red-800 via-red-600 to-black bg-clip-text text-transparent'>PASTEKING</p>
           <h1 className='text-2xl  tracking-[0.08em]' >Choose your plan</h1>
           <p className='mt-[17px] mb-11 text-[1em]'>Reminder 7 days before renewal. Cancel anytime</p>
-          <div className='w-full border flex rounded-xl'>
+          <div className='w-full  border-blue-100 border-2 flex rounded-xl'>
             <PaymentForm />
             <div className='px-8 py-6'>
               <h4 className='bg-gradient-to-r from-white via-red-500 to-gray-600 bg-clip-text text-transparent font-medium text-xl'>

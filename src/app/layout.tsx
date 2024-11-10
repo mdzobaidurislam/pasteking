@@ -34,14 +34,12 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StoreProvider>
-          <div className={'overflow-hidden'}>
+          
             <NextTopLoader showSpinner={false} />
             <Providers session={session}>
-              <Toaster />
+              <Toaster  />
               {children}
             </Providers>
-          </div>
-
         </StoreProvider>
         <Toaster />
       </body>

@@ -110,7 +110,7 @@ export default function Monetization({ setDialogOpen }) {
         height: "653px",
         opacity: "1",
       }}
-      className="bg-neutral-900 overflow-auto"
+      className="bg-primary-gradient overflow-auto"
     >
       <div>
         <div data-overflow-hidden="true">

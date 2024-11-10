@@ -18,7 +18,7 @@ const PaymentForm1 = ({
   }
 
   return (
-    <div className="max-w-2xl w-full bg-gray-900 rounded-lg shadow-lg flex flex-col md:flex-row">
+    <div className=" w-full bg-primary-gradient rounded-lg shadow-lg flex flex-col md:flex-row">
       <div className="flex-1 p-6 border-b border-gray-700 md:border-b-0 md:border-r">
         <h2 className="text-xl font-bold text-indigo-400 mb-4">Order summary</h2>
         <div className="text-3xl font-semibold text-indigo-400 mb-1">€{price} <span className="text-sm font-normal">inc. VAT</span></div>
@@ -43,20 +43,20 @@ const PaymentForm1 = ({
         <form className="space-y-4" onSubmit={onSubmit}>
           <div>
             <label className="block text-gray-400 mb-1">Email address <span className="text-red-500">*</span></label>
-            <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="email@example.com" />
+            <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full p-2 bg-transparent border border-blue-100 rounded focus:outline-none focus:border-indigo-500" placeholder="email@example.com" />
           </div>
 
           <div>
             <label className="block text-gray-400 mb-1">Country <span className="text-red-500">*</span></label>
-            <input id="country" required value={country} onChange={e => setCountry(e.target.value)} name="country" className="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" />
+            <input id="country" required value={country} onChange={e => setCountry(e.target.value)} name="country" className="w-full p-2 bg-transparent border border-blue-100 rounded focus:outline-none focus:border-indigo-500" />
           </div>
 
           <div>
             <label className="block text-gray-400 mb-1">ZIP/Postcode <span className="text-red-500">*</span></label>
-            <input type="text" required value={zipcode} onChange={e => setZipcode(e.target.value)} className="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="ZIP/Postcode"/>
+            <input type="text" required value={zipcode} onChange={e => setZipcode(e.target.value)} className="w-full p-2 bg-transparent border border-blue-100 rounded focus:outline-none focus:border-indigo-500" placeholder="ZIP/Postcode"/>
           </div>
 
-          <button type="submit" className="w-full py-3 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700">Continue</button>
+          <button type="submit" className="w-full py-3 border border-blue-100 bg-white bg-opacity-35 text-red-500font-semibold rounded hover:bg-primary-gradient">Continue</button>
         </form>
       </div>
     </div>

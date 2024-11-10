@@ -13,13 +13,22 @@ import { ToastAction } from "../ui/toast";
 export default function SecurityDashboard({ setDialogOpenSecurity }) {
   const { toast } = useToast();
   const user = useSelector((state) => state.auth);
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handlePasswordUpdate = async () => {
     setLoading(true);
 
+    if(!password){
+      toast({
+        variant: "destructive",
+        title: "Password is requried! ",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+      setLoading(false);
+      return false
+    }
     try {
       const { data } = await axios.post("/api/auth/update-password", {
         email: user?.user?.email,
@@ -56,7 +65,7 @@ export default function SecurityDashboard({ setDialogOpenSecurity }) {
         height: "510px",
         opacity: "1",
       }}
-      className="bg-neutral-900 overflow-auto"
+      className="bg-primary-gradient overflow-auto"
     >
       <div className=" text-white">
         {/* header  */}
@@ -94,14 +103,14 @@ export default function SecurityDashboard({ setDialogOpenSecurity }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="picture"
-              className="border-[#292b38] border mt-1"
+              className="border-blue-100 border mt-1"
               type="text"
               placeholder="Password"
             />
             <Button
               onClick={handlePasswordUpdate}
               disabled={loading}
-              className="border-[#292b38] border mt-1 hover:bg-[#191a23] "
+              className="border-blue-100 border mt-1 bg-white text-white hover:bg-transparent bg-opacity-25 hover:text-white "
             >
               {loading ? "Updating..." : "Submit"}
             </Button>

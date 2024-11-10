@@ -19,8 +19,6 @@ export default function Referrals({ setDialogOpen }) {
   const user = useSelector((state) => state.auth);
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
-
-  console.log(user);
   useEffect(() => {
     if (user?.user?.referral_code) {
       setReferral_code(user?.user?.referral_code);
@@ -84,7 +82,7 @@ export default function Referrals({ setDialogOpen }) {
         height: "510px",
         opacity: "1",
       }}
-      className="bg-neutral-900 overflow-auto "
+      className="bg-primary-gradient overflow-auto "
     >
       <div>
         <div data-overflow-hidden="true">
@@ -119,7 +117,7 @@ export default function Referrals({ setDialogOpen }) {
                   <Input
                     value={referral_code}
                     onChange={(e) => setReferral_code(e.target.value)}
-                    className={styles.dialog_input}
+                    className={`${styles.dialog_input} border-blue-100 bg-transparent`}
                     required
                   />
                 </div>

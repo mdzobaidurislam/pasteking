@@ -39,7 +39,7 @@ const PaymentForm2 = ({
   };
 
   return (
-    <div className="max-w-2xl w-full bg-gray-900 rounded-lg shadow-lg flex flex-col md:flex-row">
+    <div className="w-full bg-primary-gradient rounded-lg shadow-lg flex flex-col md:flex-row">
       <div className="flex-1 p-6 border-b border-gray-700 md:border-b-0 md:border-r">
         <h2 className="text-xl font-bold text-indigo-400 mb-4">Order summary</h2>
         <div className="text-3xl font-semibold text-indigo-400 mb-1">€9.99 <span className="text-sm font-normal">inc. VAT</span></div>
@@ -57,7 +57,7 @@ const PaymentForm2 = ({
         </div>
       </div>
 
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 h-[50vh] overflow-y-scroll ">
         <h2 className="text-xl font-bold mb-4">Your details</h2>
         <form className="space-y-4">
           <PayButton amount="10.00" onSuccess={handlePaymentSuccess} />
