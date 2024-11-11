@@ -13,6 +13,7 @@ body {
     :root {
       --bg_primary:linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
       --border_primary:#dbeafe;
+      --c_red:#A27F3E;
       --spinner-thumb-animation-duration: 1s;
       --focus-ring-color: #575ac6;
       --focus-ring-width: 1px;
