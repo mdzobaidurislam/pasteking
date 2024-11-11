@@ -9,7 +9,7 @@ const PasteForm: React.FC<{ paster: PasterProps }> = ({ paster }) => {
         <div>
             {/* <form onSubmit={handleSubmit}> */}
             <div className="mt-14">
-                <input type="text" value={paster.title} className=" border-2 rounded-md outline-0 text-white w-full mb-4 p-4 text-2xl  bg-transparent focus:bg-opacity-45 focus:bg-white transition-all" placeholder="Title" />
+                <input type="text" value={paster.title} className=" border-2 border-blue-100 rounded-md outline-0 text-white w-full mb-4 p-4 text-2xl  bg-transparent focus:bg-opacity-45 focus:bg-white transition-all" placeholder="Title" />
                 <textarea placeholder="Add text..." className=" border-2 rounded-md w-full h-[50vh] p-2 text-white border-blue-100 outline-0 p-4 bg-transparent focus:bg-opacity-45 focus:bg-white transition-all ">
                     {paster.content}
                 </textarea>
